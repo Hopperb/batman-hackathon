@@ -8,8 +8,8 @@
     <script>
     var config = {
         type: Phaser.AUTO,
-        width: 800,
-        height: 600,
+        width: 2822,
+        height: 384,
         physics: {
             default: 'arcade',
             arcade: {
@@ -28,13 +28,18 @@
 
     function preload ()
     {
-        this.load.image('sky', './assets/sky.png');
-        this.load.image('stand', './assets/stand.png', {  frameWidth: 32, frameHeight: 48  });   
+        this.load.image('skyline', './assets/skyline.png');
+        this.load.image('foreground', './assets/foreground.png', { frameHeight: 20, frameHeight: 30 });
+        this.load.image('stand', './assets/stand.png', {  frameWidth: 32, frameHeight: 48  });  
+
+       
+        
     }
 
     function create ()
     {
-        this.add.image(400, 300, 'sky');
+        this.add.image(200, 100, 'skyline');
+        this.add.image(300, 200, 'foreground');
 
         player = this.physics.add.sprite(100, 450, 'stand');
 
